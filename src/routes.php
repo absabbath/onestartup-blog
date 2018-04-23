@@ -7,5 +7,7 @@ Route::group(['middleware' => ['web', 'auth', 'is_admin']], function(){
 	Route::resource('admin/blog/category', 'Onestartup\Blog\Controller\CategoryController', ['as'=>'blog.admin']);
 	Route::delete('delete/cover/category/{id}', 'Onestartup\Blog\Controller\CategoryController@deleteCover')
 		->name('delete.cover.category');
+
+	Route::resource('admin/blog/tag', 'Onestartup\Blog\Controller\TagCatalogController', ['as'=>'blog.admin']);
 	
 });

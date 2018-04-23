@@ -25,6 +25,8 @@ class BlogServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->make('Onestartup\Blog\Controller\AdminBlogController');
+        $this->app->make('Onestartup\Blog\Controller\CategoryController');
+        $this->app->make('Onestartup\Blog\Controller\TagCatalogController');
         $this->loadViewsFrom(__DIR__.'/views', 'blog');
     }
 }
