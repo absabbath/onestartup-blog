@@ -130,7 +130,7 @@ class AdminBlogController extends Controller
     public function getEntries()
     {
 
-        $entries = Entry::select(['id','title','slug', 'body','status', 'cover','tags','created_at', 'category_id', 'publication_date', 'views']);
+        $entries = Entry::select(['id','title','slug', 'body','status', 'cover','tags','created_at', 'category_id', 'publication_date', 'views'])->orderBy('publication_date', 'desc');
         return Datatables::of($entries)
             ->addColumn('preview', function ($entry) {
                 return "<p><b>$entry->title</b></p>".
