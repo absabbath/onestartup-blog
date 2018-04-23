@@ -1,0 +1,17 @@
+{
+    "name": "onestartup/blog",
+    "description": "blog for websites onestartup",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Angel MAS",
+            "email": "angelmartin.isc@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Onestartup\\Blog\\": "src"}
+    }
+}
