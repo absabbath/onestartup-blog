@@ -15,5 +15,6 @@ Route::group(['middleware' => ['web', 'auth', 'is_admin']], function(){
 });
 
 Route::group(['middleware' => ['web']], function(){
-	Route::get('blog/{slug}', 'Onestartup\Blog\Controller\AdminBlogController@getEntries')->name('show.blog');
+	Route::get('blog/{slug}', 'Onestartup\Blog\Controller\BlogController@show')->name('show.blog');
+	Route::get('blog', 'Onestartup\Blog\Controller\BlogController@index')->name('main.blog');
 });
