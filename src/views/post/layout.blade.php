@@ -4,7 +4,7 @@
 	<title>
 		{{$post->title or "Titulo general"}}
 	</title>
-	@include('blog::post.metatags')
+	@include('blog-public::metatags')
 </head>
 <body>
 	{{-- Aqui toda la estructura del blog--}}

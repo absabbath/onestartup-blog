@@ -19,15 +19,17 @@ class BlogServiceProvider extends ServiceProvider
 
         if (is_dir(base_path() . '/resources/views/vendor/onestartup/blog')) {
 
-            $this->loadViewsFrom(base_path() . '/resources/views/vendor/onestartup/blog', 'blog');
+            $this->loadViewsFrom(base_path() . '/resources/views/vendor/onestartup/blog', 'blog-public');
+            $this->loadViewsFrom(__DIR__.'/views', 'blog');
 
         } else {
            
             $this->loadViewsFrom(__DIR__.'/views', 'blog');
+            $this->loadViewsFrom(__DIR__.'/views/post', 'blog-public');
         }
 
         $this->publishes([
-            __DIR__.'/views' => resource_path('views/vendor/onestartup/blog'),
+            __DIR__.'/views/post' => resource_path('views/vendor/onestartup/blog'),
         ]);
 
 

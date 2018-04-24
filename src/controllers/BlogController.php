@@ -31,7 +31,7 @@ class BlogController extends Controller
         $otros = Entry::where('status',1)->inRandomOrder()->take(3)->get();
         $categories = Category::where('active', 1)->get();
         
-        return view('blog::post.list')
+        return view('blog-public::list')
             ->with('categories', $categories)
             ->with('otros', $otros)
             ->with('posts', $posts);
@@ -62,7 +62,7 @@ class BlogController extends Controller
 
         
 
-        return view('blog::post.single')
+        return view('blog-public::single')
             ->with('post', $post)
             ->with('categories', $categories)
             ->with('otros', $otros);
